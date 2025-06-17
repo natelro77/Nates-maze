@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 9 - Our Magical Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chapter-page chapter-9" data-chapter="9">
+    <div class="sparkles-container">
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <div class="heartbeat-bg"></div>
+    
+    <div class="bunny-container">
+        <img src="assets/bunny.svg" alt="Magical Bunny" class="bunny-icon" onclick="bunnyClick()">
+    </div>
+    
+    <div class="chapter-container">
+        <div class="chapter-header">
+            <h1 class="chapter-title">Chapter 9</h1>
+            <p class="chapter-subtitle">The Final Challenge Before...</p>
+        </div>
+        
+        <div class="riddle-section">
+            <div class="riddle-box">
+                <h2 class="riddle-title">One more riddle, then something special awaits:</h2>
+                <p class="riddle-text">"I am not alive, but I grow; I don't have lungs, but I need air; I don't have a mouth, but water kills me."</p>
+                
+                <div class="answer-section">
+                    <input type="text" id="riddleAnswer" placeholder="Your answer..." class="riddle-input">
+                    <button onclick="checkAnswer('fire', 'chapter10.html')" class="submit-btn">Submit</button>
+                </div>
+                
+                <p id="feedback" class="feedback"></p>
+            </div>
+        </div>
+        
+        <div class="progress-indicator">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 90%"></div>
+            </div>
+            <p class="progress-text">Chapter 9 of 10</p>
+        </div>
+        
+        <div class="secret-hint">
+            <p class="hint-text">✨ After solving this, there's one more surprise waiting... but it might require a special sequence ✨</p>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        initializeChapter();
+        
+        document.getElementById('riddleAnswer').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkAnswer('fire', 'chapter10.html');
+            }
+        });
+    </script>
+</body>
+</html>
