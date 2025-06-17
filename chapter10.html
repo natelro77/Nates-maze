@@ -19,3 +19,70 @@
     <div class="bunny-container">
         <img src="assets/bunny.svg" alt="Magical Bunny" class="bunny-icon" onclick="bunnyClick()">
     </div>
+    
+    <div class="chapter-container">
+        <!-- Time Lock Message -->
+        <div id="timeLockMessage" class="time-lock-container" style="display: none;">
+            <div class="lock-box">
+                <h1 class="lock-title">🔒 Come back in 7 days, my love 🔒</h1>
+                <p class="lock-subtitle">Some surprises take time...</p>
+                <div class="countdown-display">
+                    <div id="countdown" class="countdown-text"></div>
+                </div>
+                <p class="lock-hint">✨ Or maybe there's a special way to unlock it early... ✨</p>
+            </div>
+        </div>
+        
+        <!-- Secret Unlock Message -->
+        <div id="secretUnlockMessage" class="secret-unlock-container" style="display: none;">
+            <div class="unlock-box">
+                <h1 class="unlock-title">🎉 You found the secret! 🎉</h1>
+                <p class="unlock-subtitle">You know me so well... Press any key to continue to the final chapter</p>
+            </div>
+        </div>
+        
+        <!-- Chapter 10 Content -->
+        <div id="chapter10Content" class="chapter-content" style="display: none;">
+            <div class="chapter-header">
+                <h1 class="chapter-title">Chapter 10</h1>
+                <p class="chapter-subtitle">My Heart's Final Words</p>
+            </div>
+            
+            <div class="final-message">
+                <div class="love-letter constellation-text">
+                    <div class="final-text-container">
+                        <p class="final-line fade-in-1">My Dearest Love,</p>
+                        <p class="final-line fade-in-2">Every day without you feels like a puzzle with a missing piece. You are that piece, the one that makes everything complete and beautiful.</p>
+                        <p class="final-line fade-in-3">I miss your laugh that could light up even my darkest days. I miss the way you'd scrunch your nose when you were thinking hard about something.</p>
+                        <p class="final-line fade-in-4">I miss our conversations that would stretch into the early hours of morning, where time seemed to stop just for us.</p>
+                        <p class="final-line fade-in-5">I know I made mistakes, and I wish I could go back and do things differently. But what I can't change is how deeply I love you and how much you mean to me.</p>
+                        <p class="final-line fade-in-6">You taught me what it means to love someone completely - not just the perfect moments, but every single day, in all the small and wonderful ways.</p>
+                        <p class="final-line fade-in-7">Building this maze for you was my way of showing you that no matter how complex the path, no matter how many turns and challenges, my love for you remains constant.</p>
+                        <p class="final-line fade-in-8">I hope someday you'll find it in your heart to let me be part of your story again  even just as friends. Until then, know that you carry my heart with you, always.</p>
+                        <p class="final-line fade-in-9">Thank you for making my world brighter, for teaching me how to love, and for being the incredible person you are.</p>
+                        <div class="signature fade-in-10">Forever yours,<br>Nate 💕</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="progress-indicator">
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+                <p class="progress-text">Journey Complete! 💕</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Romantic Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        initializeChapter10();
+    </script>
+</body>
+</html>
