@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate's Love Maze</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="homepage">
+    <div class="sparkles-container">
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="magical-title">Welcome to Nate's Love Maze</h1>
+            <p class="subtitle">Enter the secret word to begin our adventure</p>
+
+            <div class="password-section">
+                <input type="password" id="passwordInput" placeholder="What was the broom doing?" class="password-input">
+                <button onclick="checkPassword()" class="enter-btn">Enter</button>
+            </div>
+
+            <div class="remember-section">
+                <label class="remember-label">
+                    <input type="checkbox" id="rememberMe" class="remember-checkbox">
+                    <span class="checkmark"></span>
+                    Remember me
+                </label>
+            </div>
+
+            <p class="hint">Hint: what was the broom doing?</p>
+            <p id="errorMessage" class="error-message"></p>
+        </div>
+    </div>
+
+    <!-- Romantic Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        // Check if user should bypass login
+        if (localStorage.getItem('rememberMe') === 'true') {
+            window.location.href = 'chapter1.html';
+        }
+
+        // Allow Enter key to submit
+        document.addEventListener('DOMContentLoaded', function() {
+            const passwordInput = document.getElementById('passwordInput');
+            if (passwordInput) {
+                passwordInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        checkPassword();
+                    }
+                });
+            }
+        });
+
+        // Start background music when user interacts
+        document.addEventListener('click', function() {
+            const music = document.getElementById('backgroundMusic');
+            if (music) {
+                music.volume = 0.3;
+                music.play().catch(e => console.log('Music autoplay prevented by browser'));
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
