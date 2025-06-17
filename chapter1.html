@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 - Nate's Love Maze</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chapter-page chapter-1" data-chapter="1">
+    <div class="sparkles-container">
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <div class="bunny-container">
+        <img src="assets/bunny.svg" alt="Magical Bunny" class="bunny-icon" onclick="bunnyClick()">
+    </div>
+    
+    <div class="chapter-container">
+        <div class="chapter-header">
+            <h1 class="chapter-title">Chapter 1</h1>
+            <p class="chapter-subtitle">The Beginning of Our Adventure</p>
+        </div>
+        
+        <div class="riddle-section">
+            <div class="riddle-box">
+                <h2 class="riddle-title">Welcome to our magical journey!</h2>
+                <p class="riddle-text">"I have keys but no locks. I have space but no room. You can enter, but you can't go outside. What am I?"</p>
+                
+                <div class="answer-section">
+                    <input type="text" id="riddleAnswer" placeholder="Type your answer here..." class="riddle-input">
+                    <button onclick="checkAnswer('keyboard', 'chapter2.html')" class="submit-btn">Submit</button>
+                </div>
+                
+                <div id="feedback" class="feedback"></div>
+            </div>
+        </div>
+        
+        <div class="progress-indicator">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 10%;"></div>
+            </div>
+            <p class="progress-text">Chapter 1 of 10</p>
+        </div>
+    </div>
+
+    <!-- Romantic Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mpeg">
+        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        initializeChapter();
+    </script>
+</body>
+</html>
