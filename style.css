@@ -1,0 +1,1086 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', 'Quicksand', sans-serif;
+    background: linear-gradient(135deg, #ffeef8 0%, #f5e6ff 25%, #ffe0f0 50%, #f0e6ff 75%, #ffeef8 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #5a4b6b;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Background Images for Chapters */
+.chapter-page {
+    background-image: 
+        url('https://pixabay.com/get/g87b9ad0885be01763d98f2d1207a9e52800a616cc683f61161e16da2a23145e335b808815a9acb155a624f4b605a1cf1aba81f94d3333818d675d6c7c2a5e2a4_1280.jpg'),
+        linear-gradient(135deg, rgba(255, 238, 248, 0.9) 0%, rgba(245, 230, 255, 0.9) 25%, rgba(255, 224, 240, 0.9) 50%, rgba(240, 230, 255, 0.9) 75%, rgba(255, 238, 248, 0.9) 100%);
+    background-size: cover, auto;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
+    background-blend-mode: overlay;
+}
+
+.homepage {
+    background-image: 
+        url('https://pixabay.com/get/gd16570200895339539de5f035e680f67d1394225ba445bba93bfb01ef64e5b5ee2bf137aea89bd6ff693655d2a1494054b445f643bf9f2877cab0bfcc2975806_1280.jpg'),
+        linear-gradient(135deg, rgba(255, 238, 248, 0.95) 0%, rgba(245, 230, 255, 0.95) 50%, rgba(255, 238, 248, 0.95) 100%);
+    background-size: cover, auto;
+    background-position: center, center;
+    background-blend-mode: overlay;
+}
+
+/* Sparkles Animation */
+.sparkles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.sparkle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #ff69b4, transparent);
+    border-radius: 50%;
+    animation: sparkle 3s infinite ease-in-out;
+}
+
+.sparkle-1 { top: 20%; left: 10%; animation-delay: 0s; }
+.sparkle-2 { top: 60%; left: 80%; animation-delay: 1s; }
+.sparkle-3 { top: 30%; left: 60%; animation-delay: 2s; }
+.sparkle-4 { top: 80%; left: 30%; animation-delay: 0.5s; }
+.sparkle-5 { top: 10%; left: 90%; animation-delay: 1.5s; }
+
+@keyframes sparkle {
+    0%, 100% { 
+        opacity: 0; 
+        transform: scale(0.5) rotate(0deg);
+    }
+    50% { 
+        opacity: 1; 
+        transform: scale(1.5) rotate(180deg);
+    }
+}
+
+/* Homepage Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+    border: 2px solid rgba(255, 182, 193, 0.2);
+    max-width: 500px;
+    width: 100%;
+    animation: fadeInUp 1s ease-out;
+}
+
+.magical-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #8b5a96;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #9370db;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.password-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.password-input {
+    flex: 1;
+    padding: 15px 20px;
+    border: 2px solid #dda0dd;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    min-width: 200px;
+}
+
+.password-input:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+    transform: scale(1.02);
+}
+
+.enter-btn {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff69b4, #dda0dd);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.enter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+}
+
+.hint {
+    font-size: 0.9rem;
+    color: #ba55d3;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-weight: 500;
+    min-height: 20px;
+    font-size: 0.95rem;
+}
+
+.remember-section {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.remember-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #8b5a96;
+    user-select: none;
+}
+
+.remember-checkbox {
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    accent-color: #ff69b4;
+}
+
+.remember-label:hover {
+    color: #ff69b4;
+}
+
+/* Chapter Styles */
+.chapter-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.chapter-header {
+    text-align: center;
+    margin-bottom: 40px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.chapter-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #8b5a96;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+}
+
+.chapter-subtitle {
+    font-size: 1.3rem;
+    color: #9370db;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.riddle-section {
+    margin-bottom: 40px;
+}
+
+.riddle-box {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3);
+    border: 2px solid rgba(255, 182, 193, 0.2);
+    animation: fadeInUp 1s ease-out 0.3s both;
+}
+
+.riddle-title {
+    font-size: 1.5rem;
+    color: #8b5a96;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.riddle-text {
+    font-size: 1.2rem;
+    color: #5a4b6b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    font-style: italic;
+    padding: 20px;
+    background: rgba(255, 240, 245, 0.6);
+    border-radius: 15px;
+    border-left: 4px solid #ff69b4;
+}
+
+.answer-section {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.riddle-input {
+    flex: 1;
+    max-width: 300px;
+    padding: 15px 20px;
+    border: 2px solid #dda0dd;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    text-align: center;
+}
+
+.riddle-input:focus {
+    border-color: #ff69b4;
+    box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+    transform: scale(1.02);
+}
+
+.submit-btn {
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff69b4, #dda0dd);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.4);
+}
+
+.feedback {
+    font-size: 1.1rem;
+    font-weight: 500;
+    min-height: 25px;
+    transition: all 0.3s ease;
+}
+
+.feedback.success {
+    color: #28a745;
+}
+
+.feedback.error {
+    color: #ff6b6b;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff69b4, #dda0dd);
+    border-radius: 10px;
+    transition: width 1s ease-out;
+    animation: progressGlow 2s ease-in-out infinite alternate;
+}
+
+.progress-text {
+    color: #8b5a96;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+/* Bunny Icon */
+.bunny-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+}
+
+.bunny-icon {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 4px 8px rgba(255, 182, 193, 0.3));
+    animation: float 3s ease-in-out infinite;
+}
+
+.bunny-icon:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: drop-shadow(0 6px 12px rgba(255, 182, 193, 0.5));
+}
+
+/* Chapter 10 Specific Styles */
+.time-lock-container, .secret-unlock-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh;
+}
+
+.lock-box, .unlock-box {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 50px;
+    text-align: center;
+    box-shadow: 0 25px 50px rgba(255, 182, 193, 0.4);
+    border: 3px solid rgba(255, 182, 193, 0.3);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeInUp 1s ease-out;
+}
+
+.lock-title, .unlock-title {
+    font-size: 2.2rem;
+    color: #8b5a96;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.lock-subtitle, .unlock-subtitle {
+    font-size: 1.2rem;
+    color: #9370db;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.countdown-display {
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(255, 240, 245, 0.8);
+    border-radius: 15px;
+    border: 2px solid #ff69b4;
+}
+
+.countdown-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #8b5a96;
+}
+
+.lock-hint {
+    font-size: 1rem;
+    color: #ba55d3;
+    font-style: italic;
+    margin-top: 20px;
+}
+
+/* Final Message Styles */
+.final-message {
+    margin-bottom: 40px;
+}
+
+.love-letter {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 60px 50px;
+    box-shadow: 0 25px 50px rgba(255, 182, 193, 0.4);
+    border: 3px solid rgba(255, 182, 193, 0.3);
+    animation: fadeInUp 1s ease-out;
+    text-align: center;
+}
+
+.final-text-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.final-line {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #5a4b6b;
+    margin-bottom: 30px;
+    font-weight: 300;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.signature {
+    font-size: 1.4rem;
+    color: #8b5a96;
+    font-style: italic;
+    font-family: 'Quicksand', cursive;
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    position: relative;
+}
+
+.signature:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #8b5a96, transparent);
+    animation: signatureUnderline 2s ease-out 6s forwards;
+}
+
+/* Sequential fade-in animations */
+.fade-in-1 { animation: fadeInLine 1.5s ease-out 1s forwards; }
+.fade-in-2 { animation: fadeInLine 1.5s ease-out 2.5s forwards; }
+.fade-in-3 { animation: fadeInLine 1.5s ease-out 4s forwards; }
+.fade-in-4 { animation: fadeInLine 1.5s ease-out 5.5s forwards; }
+.fade-in-5 { animation: fadeInLine 1.5s ease-out 7s forwards; }
+.fade-in-6 { animation: fadeInLine 1.5s ease-out 8.5s forwards; }
+.fade-in-7 { animation: fadeInLine 1.5s ease-out 10s forwards; }
+.fade-in-8 { animation: fadeInLine 1.5s ease-out 11.5s forwards; }
+.fade-in-9 { animation: fadeInLine 1.5s ease-out 13s forwards; }
+.fade-in-10 { animation: fadeInSignature 2s ease-out 14.5s forwards; }
+
+@keyframes fadeInLine {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSignature {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes signatureUnderline {
+    to {
+        width: 100px;
+    }
+}
+
+.secret-hint {
+    text-align: center;
+    margin-top: 30px;
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+.hint-text {
+    font-size: 1rem;
+    color: #ba55d3;
+    font-style: italic;
+    padding: 15px;
+    background: rgba(255, 240, 245, 0.6);
+    border-radius: 15px;
+    border: 1px dashed #ff69b4;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 2px 2px 4px rgba(255, 182, 193, 0.3);
+    }
+    to {
+        text-shadow: 2px 2px 20px rgba(255, 182, 193, 0.8);
+    }
+}
+
+@keyframes progressGlow {
+    from {
+        box-shadow: 0 0 5px rgba(255, 105, 180, 0.5);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+/* Chapter-Specific Themes */
+
+/* Chapter 1 - The Bunny's Trail (Morning Pinks) */
+.chapter-1 {
+    background: linear-gradient(135deg, #fdf2f8 0%, #fce7f3 25%, #fbcfe8 50%, #f9a8d4 75%, #fce7f3 100%);
+}
+
+.floating-petals {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.petal {
+    position: absolute;
+    font-size: 24px;
+    animation: floatPetals 8s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.petal-1 { top: -10%; left: 10%; animation-delay: 0s; }
+.petal-2 { top: -10%; left: 30%; animation-delay: 1.5s; }
+.petal-3 { top: -10%; left: 50%; animation-delay: 3s; }
+.petal-4 { top: -10%; left: 70%; animation-delay: 4.5s; }
+.petal-5 { top: -10%; left: 85%; animation-delay: 2s; }
+.petal-6 { top: -10%; left: 15%; animation-delay: 6s; }
+
+@keyframes floatPetals {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.8;
+    }
+    90% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Chapter 2 - The Forget-Me-Not (Lavender & Gray) */
+.chapter-2 {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 25%, #e9d5ff 50%, #c4b5fd 75%, #f1f5f9 100%);
+}
+
+.floating-airpods {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.airpod {
+    position: absolute;
+    font-size: 32px;
+    animation: floatAirpods 6s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.airpod-1 { top: 20%; right: 15%; animation-delay: 0s; }
+.airpod-2 { top: 60%; left: 10%; animation-delay: 3s; }
+
+@keyframes floatAirpods {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(10deg);
+    }
+}
+
+.flickering-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: flickerHeart 2s infinite ease-in-out;
+}
+
+.heart-1 { top: 30%; left: 80%; animation-delay: 0s; }
+.heart-2 { top: 70%; left: 20%; animation-delay: 0.7s; }
+.heart-3 { top: 50%; left: 50%; animation-delay: 1.4s; }
+
+@keyframes flickerHeart {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Chapter 3 - Silly Little Things (Retro TV) */
+.chapter-3 {
+    background: linear-gradient(135deg, #1f2937 0%, #374151 25%, #4338ca 50%, #7c3aed 75%, #1f2937 100%);
+    position: relative;
+}
+
+.chapter-3:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 30%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.1) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.retro-tv {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
+    width: 80px;
+    height: 60px;
+    background: #374151;
+    border: 3px solid #6b7280;
+    border-radius: 8px;
+    z-index: 2;
+    animation: tvGlow 3s infinite ease-in-out;
+}
+
+.retro-tv:before {
+    content: '📺';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+}
+
+@keyframes tvGlow {
+    0%, 100% { box-shadow: 0 0 10px rgba(139, 92, 246, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(236, 72, 153, 0.8); }
+}
+
+/* Chapter 4 - Dream Logic (Dark Purple Stars) */
+.chapter-4 {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 25%, #3730a3 50%, #1e1b4b 100%);
+    position: relative;
+}
+
+.dreamy-stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.star {
+    position: absolute;
+    color: #fbbf24;
+    animation: twinkleStar 4s infinite ease-in-out;
+}
+
+@keyframes twinkleStar {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+/* Chapter 5 - The Maze Within (Beige Maze) */
+.chapter-5 {
+    background: linear-gradient(135deg, #fef7cd 0%, #fde68a 25%, #f59e0b 50%, #fbbf24 75%, #fef3c7 100%);
+    position: relative;
+}
+
+.maze-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background-image: 
+        linear-gradient(90deg, #92400e 1px, transparent 1px),
+        linear-gradient(0deg, #92400e 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.spinning-key {
+    position: fixed;
+    top: 15%;
+    left: 85%;
+    font-size: 28px;
+    animation: spinKey 8s infinite linear;
+    z-index: 2;
+}
+
+@keyframes spinKey {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Chapter 6 - Her Laugh Echoes (Warm Yellow & Pink) */
+.chapter-6 {
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 25%, #fbbf24 50%, #fb7185 75%, #fef3c7 100%);
+}
+
+.giggle-bubbles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    font-size: 24px;
+    animation: bubbleFloat 5s infinite ease-in-out;
+    opacity: 0.7;
+}
+
+.bubble-1 { top: 20%; left: 15%; animation-delay: 0s; }
+.bubble-2 { top: 40%; left: 75%; animation-delay: 1.5s; }
+.bubble-3 { top: 70%; left: 25%; animation-delay: 3s; }
+.bubble-4 { top: 60%; left: 85%; animation-delay: 4.5s; }
+
+@keyframes bubbleFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.7;
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 1;
+    }
+}
+
+/* Chapter 7 - The Wait (Frosted Glass) */
+.chapter-7 {
+    background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 25%, #cbd5e1 50%, #94a3b8 75%, #f1f5f9 100%);
+    position: relative;
+}
+
+.chapter-7:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.countdown-glow {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    color: #64748b;
+    text-shadow: 0 0 20px rgba(148, 163, 184, 0.8);
+    animation: pulseGlow 3s infinite ease-in-out;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes pulseGlow {
+    0%, 100% {
+        opacity: 0.6;
+        text-shadow: 0 0 20px rgba(148, 163, 184, 0.8);
+    }
+    50% {
+        opacity: 1;
+        text-shadow: 0 0 40px rgba(148, 163, 184, 1);
+    }
+}
+
+/* Chapter 8 - Memory Lane (Vintage Filter) */
+.chapter-8 {
+    background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 25%, #e2e8f0 50%, #cbd5e1 75%, #f7fafc 100%);
+    position: relative;
+    filter: sepia(0.2) contrast(1.1);
+}
+
+.vintage-frames {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.photo-frame {
+    position: absolute;
+    width: 80px;
+    height: 60px;
+    border: 3px solid #8b5cf6;
+    border-radius: 8px;
+    background: rgba(139, 92, 246, 0.1);
+    animation: slideFrame 8s infinite ease-in-out;
+    opacity: 0.6;
+}
+
+.frame-1 { top: 15%; left: -100px; animation-delay: 0s; }
+.frame-2 { top: 45%; right: -100px; animation-delay: 3s; }
+.frame-3 { top: 75%; left: -100px; animation-delay: 6s; }
+
+@keyframes slideFrame {
+    0%, 100% { transform: translateX(0); opacity: 0; }
+    25%, 75% { opacity: 0.6; }
+    50% { transform: translateX(calc(100vw + 200px)); }
+}
+
+/* Chapter 9 - Final Confession (Red Velvet) */
+.chapter-9 {
+    background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 25%, #dc2626 50%, #7f1d1d 100%);
+    position: relative;
+}
+
+.chapter-9:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 30% 20%, rgba(220, 38, 38, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 70% 80%, rgba(153, 27, 27, 0.3) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.heartbeat-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(220, 38, 38, 0.1) 0%, transparent 70%);
+    animation: heartbeat 2s infinite ease-in-out;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+}
+
+/* Chapter 10 - Galaxy Theme (Dark Blue + Stardust) */
+.chapter-10 {
+    background: linear-gradient(135deg, #0c0a1e 0%, #1e1b4b 25%, #312e81 50%, #1e1b4b 75%, #0c0a1e 100%);
+    position: relative;
+}
+
+.chapter-10:before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #fbbf24, transparent),
+        radial-gradient(2px 2px at 40px 70px, #fde047, transparent),
+        radial-gradient(1px 1px at 90px 40px, #facc15, transparent),
+        radial-gradient(1px 1px at 130px 80px, #fbbf24, transparent),
+        radial-gradient(2px 2px at 160px 30px, #fde047, transparent);
+    background-repeat: repeat;
+    background-size: 200px 100px;
+    animation: starfieldMove 20s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes starfieldMove {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100px); }
+}
+
+.constellation-text {
+    position: relative;
+    z-index: 10;
+}
+
+.constellation-text .final-line {
+    color: #e2e8f0;
+    text-shadow: 0 0 10px rgba(226, 232, 240, 0.5);
+}
+
+.constellation-text .signature {
+    color: #fbbf24;
+    text-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 30px 25px;
+        margin: 20px;
+    }
+    
+    .magical-title {
+        font-size: 2rem;
+    }
+    
+    .chapter-title {
+        font-size: 2.2rem;
+    }
+    
+    .riddle-box {
+        padding: 25px 20px;
+    }
+    
+    .riddle-text {
+        font-size: 1.1rem;
+        padding: 15px;
+    }
+    
+    .password-section, .answer-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .password-input, .riddle-input {
+        width: 100%;
+        max-width: none;
+        margin-bottom: 10px;
+    }
+    
+    .bunny-icon {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .love-letter {
+        padding: 30px 25px;
+    }
+    
+    .letter-text {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .chapter-container {
+        padding: 20px 15px;
+    }
+    
+    .magical-title {
+        font-size: 1.8rem;
+    }
+    
+    .chapter-title {
+        font-size: 2rem;
+    }
+    
+    .riddle-box {
+        padding: 20px 15px;
+    }
+    
+    .sparkle {
+        display: none; /* Hide sparkles on very small screens for performance */
+    }
+}
