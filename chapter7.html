@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 - Our Magical Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chapter-page chapter-7" data-chapter="7">
+    <div class="sparkles-container">
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <div class="bunny-container">
+        <img src="assets/bunny.svg" alt="Magical Bunny" class="bunny-icon" onclick="bunnyClick()">
+    </div>
+    
+    <div class="chapter-container">
+        <div class="chapter-header">
+            <h1 class="chapter-title">Chapter 7</h1>
+            <p class="chapter-subtitle">Getting Closer to the End</p>
+        </div>
+        
+        <div class="riddle-section">
+            <div class="riddle-box">
+                <h2 class="riddle-title">You're so close, my love:</h2>
+                <p class="riddle-text">"I'm always behind you during the day, but gone at night, and I copy everything you do without making a sound."</p>
+                
+                <div class="answer-section">
+                    <input type="text" id="riddleAnswer" placeholder="Your answer..." class="riddle-input">
+                    <button onclick="checkAnswer('shadow', 'chapter8.html')" class="submit-btn">Submit</button>
+                </div>
+                
+                <p id="feedback" class="feedback"></p>
+            </div>
+        </div>
+        
+        <div class="progress-indicator">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 70%"></div>
+            </div>
+            <p class="progress-text">Chapter 7 of 10</p>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        initializeChapter();
+        
+        document.getElementById('riddleAnswer').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkAnswer('shadow', 'chapter8.html');
+            }
+        });
+    </script>
+</body>
+</html>
