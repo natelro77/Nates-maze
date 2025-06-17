@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5 - Our Magical Journey</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chapter-page chapter-5" data-chapter="5">
+    <div class="sparkles-container">
+        <div class="sparkle sparkle-1"></div>
+        <div class="sparkle sparkle-2"></div>
+        <div class="sparkle sparkle-3"></div>
+        <div class="sparkle sparkle-4"></div>
+        <div class="sparkle sparkle-5"></div>
+    </div>
+    
+    <div class="maze-background"></div>
+    <div class="spinning-key">🗝️</div>
+    
+    <div class="bunny-container">
+        <img src="assets/bunny.svg" alt="Magical Bunny" class="bunny-icon" onclick="bunnyClick()">
+    </div>
+    
+    <div class="chapter-container">
+        <div class="chapter-header">
+            <h1 class="chapter-title">Chapter 5</h1>
+            <p class="chapter-subtitle">Halfway Through Our Journey</p>
+        </div>
+        
+        <div class="riddle-section">
+            <div class="riddle-box">
+                <h2 class="riddle-title">You're doing amazing, solve this:</h2>
+                <p class="riddle-text">"I'm always running but never moving, always loud but never speaking, and I tick but I'm not alive."</p>
+                
+                <div class="answer-section">
+                    <input type="text" id="riddleAnswer" placeholder="Your answer..." class="riddle-input">
+                    <button onclick="checkAnswer('clock', 'chapter6.html')" class="submit-btn">Submit</button>
+                </div>
+                
+                <p id="feedback" class="feedback"></p>
+            </div>
+        </div>
+        
+        <div class="progress-indicator">
+            <div class="progress-bar">
+                <div class="progress-fill" style="width: 50%"></div>
+            </div>
+            <p class="progress-text">Chapter 5 of 10</p>
+        </div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
+    </audio>
+
+    <script src="script.js"></script>
+    <script>
+        initializeChapter();
+        
+        document.getElementById('riddleAnswer').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkAnswer('clock', 'chapter6.html');
+            }
+        });
+    </script>
+</body>
+</html>
